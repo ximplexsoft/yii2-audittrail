@@ -42,7 +42,8 @@ class AuditTrailEntryQuery extends \yii\db\ActiveQuery
 	public function subject($model)
 	{
 		$this->modelType($model::className());
-		$this->andWhere(['foreign_pk'=>static::createPrimaryKeyJson($model)]);
+		// Removed this code because it always returns null
+		//$this->andWhere(['foreign_pk'=>static::createPrimaryKeyJson($model)]);
 		return $this;
 	}
 	
